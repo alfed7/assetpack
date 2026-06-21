@@ -5,7 +5,7 @@ import { compressSharp } from './utils/compressSharp.js';
 import { resolveOptions } from './utils/resolveOptions.js';
 
 import type { AstcOptions, BasisOptions, BcOptions, EtcOptions } from 'gpu-tex-enc';
-import type { AvifOptions, JpegOptions, PngOptions, WebpOptions } from 'sharp';
+import type { AvifOptions, JpegOptions, PngOptions, Sharp, WebpOptions } from 'sharp';
 import type { Asset, AssetPipe, PluginOptions } from '../core/index.js';
 
 type CompressJpgOptions = Omit<JpegOptions, 'force'>;
@@ -31,7 +31,7 @@ export interface CompressOptions extends PluginOptions {
 export interface CompressImageData {
     format: '.avif' | '.png' | '.webp' | '.jpg' | '.jpeg';
     resolution: number;
-    sharpImage: sharp.Sharp;
+    sharpImage: Sharp;
 }
 
 export interface CompressImageDataResult {

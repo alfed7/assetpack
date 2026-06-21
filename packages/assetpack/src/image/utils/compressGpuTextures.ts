@@ -5,7 +5,7 @@ import { tmpdir } from 'node:os';
 import { extname, join } from 'node:path';
 
 import type { AstcOptions, BasisOptions, BcOptions, EtcOptions } from 'gpu-tex-enc';
-import type sharp from 'sharp';
+import type { Sharp } from 'sharp';
 import type { CompressImageData, CompressImageDataResult, CompressOptions } from '../compress.js';
 
 export async function compressGpuTextures(
@@ -87,7 +87,7 @@ export async function compressGpuTextures(
     return compressed as CompressImageDataResult[];
 }
 
-async function adjustImageSize(sharpImage: sharp.Sharp, imagePath: string): Promise<string> {
+async function adjustImageSize(sharpImage: Sharp, imagePath: string): Promise<string> {
     const metadata = await sharpImage.metadata();
     const { width = 0, height = 0 } = metadata;
     const right = width % 4 !== 0 ? 4 - (width % 4) : 0;

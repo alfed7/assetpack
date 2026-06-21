@@ -34,6 +34,10 @@ function createNewFilePath(asset: Asset, newFileName: string, outputBase?: strin
     if (outputBase) {
         outputDir = path.joinSafe(outputBase, relativePath);
     } else {
+        if (!asset.transformName) {
+            throw new Error('[AssetPack] Cannot create a transformed asset without a transform name');
+        }
+
         outputDir = path.joinSafe(AssetCache.location, asset.transformName, relativePath);
     }
 

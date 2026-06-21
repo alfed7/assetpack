@@ -17,7 +17,6 @@
     "skipLibCheck": true,
     "moduleResolution": "node16",
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "./",
     "jsx": "react-jsx"
   }
 }
